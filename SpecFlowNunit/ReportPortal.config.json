@@ -9,8 +9,8 @@
     }
   },
   "launch": {
-    "name": "NUnit 3 Demo Launch",
-    "description": "this is description",
+    "name": "NUnitSpecflow",
+    "description": "Tests about Yandex mail",
     "debugMode": true,
     "tags": [ "Chrome", "Firefox" ]
   }

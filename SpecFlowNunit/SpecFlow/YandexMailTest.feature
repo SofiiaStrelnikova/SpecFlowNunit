@@ -37,20 +37,20 @@ Scenario Outline: Log in to mail and send letter
 | auto-test-account2020@yandex.ru | autotestaccount | lala  | letter |
 
 
-#@disktag
-#Scenario Outline: Log in to mail, go to Disk and work with picture
-#	Given I have a user's <login> and <password>
-#	When I login
-#	Then the exit-link will appeared
-#
-#	Given Yandex disk page and trash in yandex disk page
-#	When I open yandex disk
-#	Then I delete a picture
-#	And I restore it
-#
-#	Examples: 
-#| login                           | password        |
-#| auto-test-account2020@yandex.ru | autotestaccount |
+@disktag
+Scenario Outline: Log in to mail, go to Disk and work with picture
+	Given I have a user's <login> and <password>
+	When I login
+	Then the exit-link will appeared
+
+	Given Yandex disk page and trash in yandex disk page
+	When I open yandex disk
+	Then I delete a picture
+	And I restore it
+
+	Examples: 
+| login                           | password        |
+| auto-test-account2020@yandex.ru | autotestaccount |
 
 
 

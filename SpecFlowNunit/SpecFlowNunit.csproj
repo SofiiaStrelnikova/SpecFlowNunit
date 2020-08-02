@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Logging\ScreenshotTaker.cs" />
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\CurrentDraftLetterPage.cs" />
     <Compile Include="Pages\DraftsPage.cs" />

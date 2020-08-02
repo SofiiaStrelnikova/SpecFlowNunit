@@ -189,25 +189,31 @@ namespace SpecFlowNunit
         public void GivenYandexDiskPageAndTrashInYandexDiskPage()
         {
             yandexDiskMainPage = new YandexDiskMainPage();
+            logger.Info("YandexDiskMainPage is created");
+
             trashInYandexDiscPage = new TrashInYandexDiscPage();
+            logger.Info("TrashInYandexDiscPage is created");
         }
 
         [When(@"I open yandex disk")]
         public void WhenIOpenYandexDisk()
         {
             postPage.OpenDisk();
+            logger.Debug("TrashInYandexDiscPage is open");
         }
 
         [Then(@"I delete a picture")]
         public void ThenIDeleteAPicture()
         {
             yandexDiskMainPage.PicturesDelete();
+            logger.Debug("Picture is deleted");
         }
 
         [Then(@"I restore it")]
         public void ThenIRestoreIt()
         {
             trashInYandexDiscPage.PictureRestore();
+            logger.Debug("Picture is restored");
         }
 
     }

@@ -1,4 +1,9 @@
-﻿using TechTalk.SpecFlow;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using System;
+using System.Drawing.Imaging;
+using System.IO;
+using TechTalk.SpecFlow;
 
 namespace SpecFlowNunit
 {
@@ -7,7 +12,7 @@ namespace SpecFlowNunit
 	{		
 		protected static Browser Browser;		
 
-		[BeforeFeature]
+		[BeforeScenario]
 		public static void InitTest()
 		{
 			Browser = Browser.Instance;
@@ -15,9 +20,14 @@ namespace SpecFlowNunit
 			Browser.NavigateTo(Configuration.StartUrl);
 		}
 
-		[AfterFeature]
+		[AfterScenario]
 		public static void CleanTest()
 		{
+			if (TestContext.CurrentContext.Result.FailCount > 0)
+			{
+				ScreenshotTaker.TakeScreenshot(Path.Combine(Environment.CurrentDirectory, "Screenshots"),
+					TestContext.CurrentContext.Test.Name);
+			}
 			Browser.Quit();
 		}		
 	}
